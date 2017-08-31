@@ -10,12 +10,6 @@ set(HDRS_FibreLibrary
 				hungarian.h
 				memdebug.h
 				targetver.h
-				vtkCreateMTFiber.h
-				vtkSortMTFiber.h
-				vtkDirectionMTFiber.h
-				vtkRemovePoints.h
-				vtkDataLoader.h
-				vtkInfo.h
 				vtkLHPMuscleFibresAnalysisFilter.h
 				vtkLHPMuscleFibresMath.h
 				vtkLHPMuscleFibresResample.h
@@ -25,25 +19,31 @@ set(HDRS_FibreLibrary
 				vtkMuscleDecomposer.h
 				vtkMuscleDecomposerSplineInterpolator.h
 				vtkMuscleDecomposerUtils.h
-				vtkStdMcr.h
 				vtkLHPPolyLinesBuilder.h
 				vtkCatmullRomSpline.h
 				vtkParametricCatmullRomSpline.h
 				vtkParametricCatmullRomSurface.h
-				vtkNearestNeighbours.h
-				vtkLinesRestorer.h
 				vtkTriangleMeshLaplacianDeformation.h
 				csparse.h
+				vtkLHPSetGet.h
 )
+
+if (CHMD_BUILD_PRIVATE_APPS)
+  list(APPEND  HDRS_FibreLibrary
+				vtkCreateMTFiber.h
+				vtkSortMTFiber.h
+				vtkDirectionMTFiber.h
+				vtkRemovePoints.h
+				vtkDataLoader.h
+				vtkInfo.h
+				vtkNearestNeighbours.h
+				vtkLinesRestorer.h
+				vtkStdMcr.h
+  )
+endif()
 
 set(SRCS_FibreLibrary
 				hungarian.c
-				vtkCreateMTFiber.cxx
-				vtkSortMTFiber.cxx
-				vtkDirectionMTFiber.cxx
-				vtkRemovePoints.cxx
-				vtkDataLoader.cxx
-				vtkInfo.cxx
 				vtkLHPMuscleFibresAnalysisFilter.cpp
 				vtkLHPMuscleFibresMath.cpp
 				vtkLHPMuscleFibresResample.cpp
@@ -56,12 +56,25 @@ set(SRCS_FibreLibrary
 				vtkCatmullRomSpline.cxx
 				vtkParametricCatmullRomSpline.cxx
 				vtkParametricCatmullRomSurface.cxx
-				vtkNearestNeighbours.cxx
-				vtkLinesRestorer.cxx
 				vtkTriangleMeshLaplacianDeformation.cpp
 				csparse.c
 )
 
-add_subdirectory(HaoLi)
-add_library(FibreLibrary ${SRCS_FibreLibrary} ${HDRS_FibreLibrary})
+if (CHMD_BUILD_PRIVATE_APPS)
+  list(APPEND  SRCS_FibreLibrary
+				vtkCreateMTFiber.cxx
+				vtkSortMTFiber.cxx
+				vtkDirectionMTFiber.cxx
+				vtkRemovePoints.cxx
+				vtkDataLoader.cxx
+				vtkInfo.cxx
+				vtkLinesRestorer.cxx
+				vtkNearestNeighbours.cxx
+  )
+endif()
 
+if (CHMD_BUILD_PRIVATE_APPS)
+  add_subdirectory(HaoLi)
+endif()
+
+add_library(FibreLibrary ${SRCS_FibreLibrary} ${HDRS_FibreLibrary})

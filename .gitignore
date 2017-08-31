@@ -23,7 +23,7 @@ moc*
 Makefile*
 ui_*
 qrc_*
-CMakeFiles/*
+CMakeFiles/
 
 #Ignore files build by Visual Studio
 *.user
@@ -62,15 +62,15 @@ _ReSharper*/
 *.pyc
 
 #ignore Build directory
-*/[Bb]uild/*
+[Bb]uild/
 
 
 
-vtk_data_cache/*
+vtk_data_cache/
 *.vcxproj
 *.vcxproj.orig
 *.opendb
-vtk_dir
+vtk_dir/
 *.VC.db
 Sources/vtkMuscleDecompositionInstaller/vtkMuscleDecompositionInstaller/Express/*
 *.new.vtk
@@ -78,5 +78,4 @@ camera0.bin
 ffPatch*.vtk
 output0.vtk
 mMscObb0.vtk
-Data/GlutMax/output0.vtk
-Data/Iliacus/output0.vtk
+output0.vtk
