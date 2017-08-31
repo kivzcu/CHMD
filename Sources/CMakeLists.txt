@@ -84,7 +84,7 @@ if (NOT CXX_FLAGS_CONFIGURED_ONCE)
 	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /arch:AVX /Gy /Oi /Oy /Ox /GS-" CACHE STRING "Flags used by the compiler during the release builds." FORCE)
   ENDIF()
 
-  set(CHMD_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/Bin" CACHE PATH "The directory where to place the output binaries." FORCE)
+  set(CHMD_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Bin" CACHE PATH "The directory where to place the output binaries." FORCE)
 
   set(CXX_FLAGS_CONFIGURED_ONCE TRUE CACHE INTERNAL "A flag showing that CMake has configured this at least once.")
 endif()
