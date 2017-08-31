@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 2.8.11)
+project(MuscleDecomposition)
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+	message(STATUS "GCC detected, adding compile flags")
+	set(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Wextra -Wno-delete-non-virtual-dtor -Wno-unknown-pragmas -Wno-variadic-macros -Wno-long-long -Wno-format-security -Wno-write-strings -m64 -O3")
+endif(CMAKE_COMPILER_IS_GNUCXX)
+
+if(EXISTS "../src/vtk_dir")
+	set(VTK_DIR "vtk_dir")
+endif()
+find_package(VTK REQUIRED)
+find_package(Ceres REQUIRED)
+include(${VTK_USE_FILE})
+include_directories(SYSTEM ${CERES_INCLUDE_DIRS})
+include_directories(SYSTEM ${VTK_INCLUDE_DIRS})
+
+add_subdirectory(FibreLibrary)
+add_subdirectory(FibreOperation)
+add_subdirectory(vtkMuscleDecomposition)
+add_subdirectory(ValidationDataGenerator)

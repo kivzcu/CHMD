@@ -1,0 +1,82 @@
+# Ignore all back-up files...
+*~
+*.bak
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+# Exclude Kdevelop4 files ...
+.kdev*
+
+# Exclude QtCreator and CMake files ...
+CMakeLists.txt.user
+*.pro.user*
+moc*
+*.app*
+*.moc
+*.dylib
+*.so*
+*.dll
+*.lib
+*.a
+*.o
+Makefile*
+ui_*
+qrc_*
+CMakeFiles/*
+
+#Ignore files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.idb
+*.sdf
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.vspx
+*.psess
+*.opensdf
+
+#Exclude C++  files ...
+*.obj
+*.dep
+
+#ignore pyc files
+*.pyc
+
+#ignore Build directory
+*/[Bb]uild/*
+
+
+
+vtk_data_cache/*
+*.vcxproj
+*.vcxproj.orig
+*.opendb
+vtk_dir
+*.VC.db
+Sources/vtkMuscleDecompositionInstaller/vtkMuscleDecompositionInstaller/Express/*
+*.new.vtk
+camera0.bin
+ffPatch*.vtk
+output0.vtk
+mMscObb0.vtk
+Data/GlutMax/output0.vtk
+Data/Iliacus/output0.vtk
